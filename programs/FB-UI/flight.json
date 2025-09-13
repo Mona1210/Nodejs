@@ -1,0 +1,10 @@
+{
+    "Flight" : [
+    {"flightId": "IND-101","aircraftName":"Delta Airlines", "fare":600, "availableSeats":3, "status":"Running"},
+    {"flightId": "IND-102","aircraftName":"Jet Blue", "fare":700, "availableSeats":20, "status":"Cancelled"},
+    {"flightId": "IND-103","aircraftName":"United Airlines", "fare":745, "availableSeats":11, "status":"Cancelled"},
+    {"flightId": "IND-104","aircraftName":"Virgin Airlines", "fare":840, "availableSeats":7, "status":"Running"},
+    {"flightId": "IND-105","aircraftName":"Allegiant Air", "fare":580, "availableSeats":15, "status":"Cancelled"},
+    {"flightId": "IND-106","aircraftName":"Hawaian Airlines", "fare":800, "availableSeats":21, "status":"Running"}
+    ]
+}

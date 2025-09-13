@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 offset-md-2">
+            <div class="card-header">
+                Template Login
+            </div>
+            <div class="card-body">
+                <form #loginForm="ngForm" (ngSubmit) = "onLogin(loginForm.value)">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" required pattern="^[a-zA-Z0-9]+$" name="username" 
+                            [(ngModel)]="userName" #uname = "ngModel">
+                        <div class= "alert alert-danger" *ngIf="uname.errors && (uname.invalid && uname.touched)">
+                            <span *ngIf="uname.errors?.required">Username is mandatory</span>
+                            <span *ngIf="uname.errors?.pattern">Username should have alphanumerics only</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Enter Password</label>
+                        <input type="password" class="form-control" required name="password" #pwd="ngModel"
+                            [(ngModel)]="password">
+                        <div class="alert alert-danger" *ngIf="pwd.errors && (pwd.invalid && pwd.touched)">
+                            <span *ngIf="pwd.errors?.required">Password is mandatory</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfBirth">Enter Date of Birth</label>
+                        <input type="date" class="form-control" required name="birthDate" #dob="ngModel"
+                            [(ngModel)]="birthDate" validatedob>
+                        <div class="alert alert-danger" *ngIf="dob.errors && (dob.invalid && dob.touched)">
+                            <span *ngIf="dob.errors?.required">DOB is mandatory</span>
+                            <span *ngIf="dob.errors?.dobInvalid">{{dob.errors.dobInvalid}}</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-default" [disabled]="loginForm.errors">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

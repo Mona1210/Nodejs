@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="misc.css">
+    </head>
+    <body>
+        <!--Disadv of transitions
+        Transition starts only when some event like focus or hover occurs
+        we can specify only initial and final state for transitions, not intermediate state
+
+        Animations - same like transitions but we can specify intermediate states and can start without events
+
+        Animation is done using keyframes. we specify from and to using these keywords or using % - 0% - start, 100%-end
+        animation-name, animation-duration (time to complete 1 iteration), animation-timing (to control pace),
+        animation-delay (delay before start of anim), animation-iteration-count (no fo times anim plays, default 1)
+        -->
+        <div id="testing">
+            <p id="animex">Testing Animation</p>
+        </div>
+        
+
+        <!--RWD techniques
+            Fluid layouts - Use relative units like % and not px
+            Flexible images - define width of image as % of container width
+            media query - @media screen is used to define properties based on browser viewport width
+
+            media types - handlheld, print, screen (any screen), tv
+            media features - device-height, device-width, height, width (of viewport) - all are numbers
+            orientation - landscape/portrait; resolution - number; device - number
+
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"> - this prevents the website to overflow
+            when assessed in mobile
+            viewport width > Browser width > page is wider than browser - issue
+        -->
+        <div id="container">
+            <div class="one">
+                <p>Angkor Wat is a temple at Angkor, Cambodia, built in the capital city for King Suryavarman II 
+                    in the early 12th century as the state temple. The largest and best-preserved temple at the 
+                    site, it is the only one to have remained a significant religious center—first Hindu, then 
+                    Buddhist—since its foundation. The temple is the epitome of the high classical style of Khmer 
+                    architecture. It has become a symbol of Cambodia, appearing on its national flag, and is the 
+                    country's prime attraction for visitors. Angkor Wat combines two basic plans of Khmer temple 
+                    architecture: the temple mountain and the later galleried temple. It is designed to represent 
+                    Mount Meru, home of the gods in Hindu mythology.</p>
+            </div>
+            <div class="two">
+                <p>At the center of the temple stands a quincunx of towers. The temple is admired for the grandeur 
+                    and harmony of its architecture and for the extensive bas-reliefs and the numerous devatas adorning 
+                    its walls. Unusually, Angkor Wat faces the west; scholars are divided as to the significance of this.</p>
+            </div>
+            <div class="three"">
+                <p>Portsmouth Cathedral is an Anglican cathedral in the centre of Old Portsmouth in Portsmouth, 
+                    England. It is the cathedral of the Diocese of Portsmouth and the seat of the bishop of 
+                    Portsmouth. This photograph shows the cathedral's West Great Organ, installed in 2001 to 
+                    supplement the existing pipe organ that had been installed by Nicholson & Co Ltd in 1994 by 
+                    speaking directly into the nave.</p>
+            </div>
+        </div>
+        <br><br><br>
+
+
+        <!--CSS Security
+            CSS injection - malicious code can be injected leading to cross scripting, UI modification, data exfiltration
+            Best practices - scan application with securir=ty scanner, content sanitization, implement CSP header in meta data
+            as Content-Security-Policy:default-src 'self' (indicates only sources from original domain are allowed)
+            script-src - only scripts from specified sources are allowed;
+            style-src - indicatesstylesheets from specified sources are allowed
+        -->
+        <p id="question">hello World!</p>
+
+    </body>
+</html>

@@ -1,0 +1,59 @@
+@keyframes anim {
+    to {
+        color: white;
+        background-color: black;
+    }
+    from {
+        color: black;
+        background-color: white;
+    }
+}
+
+@keyframes animpercent {
+    0% {
+        color: white;
+        background-color: black;
+    }
+    50% {
+        color: black;
+        background-color: white;
+    }
+    100% {
+        color: black;
+        background-color: lightseagreen;
+    }
+}
+
+#animex {
+    animation-name: animpercent;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-delay:5s;
+    animation-iteration-count: infinite;
+    animation-direction:normal;
+}
+
+#testing {
+    background-color: lightsalmon;
+}
+
+.one {
+    background-color: lightpink;
+    float:left;
+}
+
+.two {
+    background-color: lightskyblue;
+    float:left;
+}
+
+.three {
+    background-color: lightyellow;
+    float:left;
+}
+
+#question { 
+    padding-top:20px;
+    border:10px solid transparent; 
+    border-image: url(images/google.jpg) 20% round;
+}

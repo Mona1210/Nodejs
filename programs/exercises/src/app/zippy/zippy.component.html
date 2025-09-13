@@ -1,0 +1,8 @@
+<div class="zippy">
+  <div class="zippy-heading" (click)="showDetails()" [class.zippy-open]="showContent">
+    Shipping Details
+  </div>
+  <div class="zippy-body" *ngIf="showContent">
+    Shipping Information
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card-header">
+                <h2 class="text-center">Template Driven - Registration Form</h2>
+            </div>
+            <div class="card-body">
+                <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm.value)">
+                    <div class="form-group">
+                        <label for="userName>">User Name</label>
+                        <input id="userName" class="form-control" required pattern="^[a-zA-Z]+$" type="text"
+                        [(ngModel)]="userName" name="user" #uName="ngModel">
+                        <div class="text-danger" *ngIf="uName.invalid && uName.touched">
+                            <span *ngIf="uName.errors?.required">Field is required</span>
+                            <span *ngIf="uName.errors?.pattern">Name must have only alphabets</span>
+                        </div>
+                        <!--"?. ==> safe navigator operator"-->
+                     </div>
+                     <div class="form-group">
+                         <label for="password">Password</label>
+                         <input id="password" class="form-control" required type="password"
+                         [(ngModel)]="password" name="password" #pswd="ngModel">
+                         <div class="text-danger" *ngIf="pswd.invalid && pswd.touched">
+                             <span *ngIf="pswd.errors?.required">Field is required</span>
+                         </div>
+                     </div>
+                     <button type="submit" class="btn btn-outline-success" [disabled]="registerForm.invalid">Register</button>
+                </form>
+                <!--ngForm ==> to define the reference variable to identify the form
+                #formReferenceName = "ngForm
+                Form submission ==> (ngSubmit)="expression/functionCall()-->
+            </div>
+        </div>
+    </div>
+</div>

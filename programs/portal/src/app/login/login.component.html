@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="col-md-6 offset-md-2">
+        <!--<app-dashboard *ngIf="isAuthenticated" (profileEvent)='setProfile($event)'></app-dashboard>-->
+        <div class="row">
+            <div class="card-header">
+                Login 
+            </div>
+            <div class="card-body">
+                <!--<app-register (customEvent)="set($event)">{{registrationMsg}}</app-register>-->
+                <div>{{isAuthenticated}}</div>
+                <div *ngIf="profileMsg">{{profileMsg}}</div>
+                <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                    <div class="form-group">
+                        <label for="Username">Enter Username</label>
+                        <input type="text" class="form-control" formControlName="uname" placeholder="Username">
+                        <div  class="error" *ngIf="loginForm.controls.uname.invalid && loginForm.controls.uname.touched">
+                            <span *ngIf="loginForm.controls.uname.errors?.required">Username is mandatory</span>
+                            <span *ngIf="loginForm.controls.uname.errors?.maxlength">Username cannot be more than 10 characters</span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="Password">Enter Password</label>
+                        <input type="password" class="form-control" formControlName="pwd" placeholder="Password">
+                        <div class="error" *ngIf="loginForm.controls.pwd.invalid && loginForm.controls.pwd.touched">
+                            <span id="pwderror1" *ngIf="loginForm.controls.pwd.errors?.required">Password is mandatory</span>
+                            <span id="pwderror2" *ngIf="loginForm.controls.pwd.errors?.passworderror">{{loginForm.controls.pwd.errors.passworderror.message}}</span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+                    <button class="btn btn-default" type="submit" [disabled]="loginForm.invalid || loginForm.untouched">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<app-dashboard [authenticated] = "isAuthenticated"></app-dashboard>-->

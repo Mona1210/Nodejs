@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <!--HTML security issues
+        1. HTML injection - hacker can inject malicious HTML code into web page through links/input fields
+            happens when input fields are not sanitized
+            malicious code can be injected through innerHTML, document.write()
+            Types of HTML injection - 
+            Stored - the malicious code introduced will be stored in backend and will be executed when user calls that function
+            Reflected - It will not be stored in backend, it executes everytime user responds to malicious code
+            
+            Prevention - Properly validate the data in code, use safe JS functions like innerText instead of innerHTML,
+            removing illegal characters from input and output
+        
+        2. Clickjacking - common form of this attack is mirroring a login form to get credentials/data
+            The target is sensitive data, to get access to teh system's resources. Used for hijacking accounts
+            How is it done? Attacker uses low iframes to trick users to click on the form. Also called UI redressing/iframe overlay
+            Attacker loads a target webpage in low opacity iframe. The attackers webpage is loaded with clickable link
+            When user clicks on it, it triggers actions on malicious page without user knowing it.
+            
+            Prevention - server side methods should be used, Using X-frame and Content Security Policy response headers
+            CSp can be set in <meta>, sandbox attribute in iframe also prevents this
+        
+        3. HTML5 attributes - some attributes are susceptible to attacks eg formaction, autofocus, onerror in audio/video tags
+            Dont use these properties just for teh sake of it
+            Prevention - By HTML Sanitization
+            It protects from cross scripting by replacing HTML tags with safe tags. Sanitization removes advanced
+            tags like <script>,<embed>, <object> and <link>
+            The tags will be replaced by encode value eg - < - &lt; or &#60
+            Many Sanitizer libraries are available - DOMPurify, XSS, XSS-filters
+
+        4. Local Storage Vulnerabilities - We store data in browser cache, there is a chance of data stealing,
+            HTML5 has introduced web storage/offline storage to store in local cache. 
+            Local storage - holds data in browser cache till user deletes it or it expires. setItem() assigns data to local storage
+            Session storage - Holds data until session ends or browser tab is closed
+            cookie - stored in browser, stored as key value pairs; document.cookie - to craete a cookie
+        
+        5. Reverse Tabnabbing - attack where the linked page can control the parent page and rewrite it without the user knowing
+            Happens if user is in unsecured network, can happen even if HTTPS is used
+            Happens if website is using hyperlink with target in which the user clicks and new page will be loaded 
+            in new page keeping the current tab open or if website is using window.open js function.
+
+            Prevention - If new tab is used to open target always use rel="noopener noreferrer". This is to inform browser
+            not to make opener object available in linked website. noferrer tells browser not to make referre info available
+            to linked website
+            Instead of setting for each link we can set this in HTTP header in all responses - Referrer-Policy:no-referrer
+        
+            Overall security measures
+            1. Dont rely on client side validation only. Alwys include server side validation as well
+            2. Sanitize user inputs
+            3. Eliminate commenst from final code
+            4. Use CSP in server response header
+        -->
+    </body>
+</html>

@@ -1,0 +1,45 @@
+img {
+    border:1px solid black;
+    height:200px;
+    width:200px;
+}
+
+#translate {
+    transform: translate(-45px, 70px);
+}
+
+#scale {
+    /*transform: scale(-2);*/
+    transform:scaleX(2);
+    margin-top:100px;
+    margin-left:100px;
+}
+
+#rotate {
+    border: 1px solid brown;
+    height:100px;
+    width:200px;
+    transform:rotate(-20deg);
+}
+
+#skewnormal {
+    border: 1px solid darkgreen;
+    height:100px;
+    width:200px;
+    transform:skew(30deg,30deg);
+}
+
+#skewxaxis {
+    border: 1px solid darkslateblue;
+    height:100px;
+    width:200px;
+    transform:skew(40deg);
+}
+
+#transition {
+    margin-left:20px;
+    transition: width 5s steps(3, start) 6s;
+}
+img:hover {
+    width:400px;
+}

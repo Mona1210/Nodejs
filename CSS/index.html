@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="index.css"> <!--External-->
+        <!--Different ways of styling
+        Inline - applied inline with element
+        Internal - specified in <style>
+        External - The stylesheet is in external location, rel - relationship, href - path
+        Importing stylesheet - using import statement in style tag
+        css file can be imported in another css file
+    
+        Cascading priority
+        Inline > Internal or import > External > Browser default
+    -->
+        <!--Internal-->
+        <style>
+            input {
+                font-weight:bold;
+                background-color: cadetblue;
+            }
+            #para {
+                color:crimson;
+            }
+            body { 
+                background-color: lightcyan;
+            }
+            .blue{
+                color:darkblue;
+            }
+            div p {
+                background-color: yellow;
+                color:hotpink;
+            }
+            h1,h2,h3 {
+                color:maroon;
+            }
+        </style>
+        <style type="text/css">
+            @import url("http://www.xyz.com/style.css");
+        </style>
+    </head>
+    <!--Selectors
+    Element selectors - to style elements eg body {background-color:lightgrey;}
+    Id selector - to style specific element
+    class selector - to provide same styling for multiple elements
+    Contextual selectors - when we want selectors to match elements ina  context eg in a div
+
+    Selectors priority - Id > Class> Element
+
+    Specificity - 3 didgit number eg 123  -1- Id selectors, 2- no of class selectors, 3 - no of elements
+    style rule with highest specificity wins in case of multiple styles using multiple slectors
+    Eg - #sid #pid {
+        color:blue;
+    } specificity - 200
+
+    section.sclass p#pid.pclass{
+        color:green;
+    } specifity 122
+    Theerfore first style will be applied
+
+    !important - this makes sure that the style is not overridden even if lower specificity
+
+    Some child elements inherit properties from parent ie they have "inherit" associated with them like font and text
+    border and margin are not inherited. If ww want these to be inherited we need to specify inherit in teh attribute
+    css pseudo-class is a keyword that can be applied to selectors. pseudo classes specify teh state of the
+    element to be selected-->
+    <body>
+        <p>Welcoem to CSS course!</p>
+        <h4 style="color: brown;">HTML and CSS</h4> <!--Inline-->
+        <form><input type="text" name="Username"></form>
+        <p id="para">Id Selector example</p> <!--ID selector-->
+        <p class="blue">Class selector</p>
+        <div> <!--contextual selector-->
+            <p class="blue">Paragraph 1</p>
+            <p class="blue">Paragraph 2</p>
+        </div>
+        <h3>Grouping of selector</h3>
+        <!--Inheritance in CSS-->
+        <h1>Train reservation</h1>
+        <p style="font-size:20px;">Train reservation for different cities<br/>
+            <span style="font-size:80%;">Please login to book train</span><!-- font-size is inherited by child(span) from parent(p)-->
+        </p>
+            <form id="login" style="border:inherit;"> <!--border is not inherited by default, hence needs to be specified-->
+                <label for="Username">Enter Username : </label>
+                <input type="text" id="Username" placeholder="Please enter username" pattern="[a-z]"/><br/><br/>
+                <label for="Password">Enter Password : </label>
+                <input type="password" id="Password" required autofocus/><br/><br/>
+                <label for="DOB">Enter Date of Birth : </label>
+                <input type="date" id="DOB"/><br/><br/>
+            </form>
+        <!--Pseudo classes - used to define special state of the element-->
+        <a href="http://google.com" target="_blank">Google</a> <!--a:hover, a:visited, input type=text-->
+    </body>
+</html>

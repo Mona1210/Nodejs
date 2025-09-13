@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="typography.css">
+    </head>
+    <body>
+        <!--color models
+            opacity - to change opacity/transparency level, value can be 0(fully transparent) - 1(fully opaque)
+            If parent element has this property defined, all child elements inherit it
+        -->
+        <div id="parent">
+            <div id="child">
+                This is teh child div
+            </div>
+        </div> <br/> <br/>
+
+        <!-- RGBA color model
+            What is we want opacity to applied only to background color and not text? RGBA is used
+            A- Alpha - represent the opacity level (number from 0 - 1)
+        -->
+        <div id="parent">
+            <div id="childbgcolor">
+                Opacity only for background and not text
+            </div>
+        </div><br/><br/><br/><br/>
+
+        <!-- HSL and HSLA color models
+        Hue - base color - value from 0 to 359
+        Saturation - 100% full hue, 0% gray shade after ignoring teh hue
+        Lightness - 0% black, 50% hue, 100% white
+        Alpha - opacity 0 to 1
+
+        range of colors is more in HSL/HSLA than color model
+        Eg HSL(240, 100%, 50%), HSLA(128, 70%, 20%, 0.6)
+        -->
+        <div id="parent">
+            <div id="childHSLA">
+                Example of HSLA
+            </div>
+        </div>
+
+        <!-- CSS Units
+            Absolute units - will appear exactly eg cm, mm, px, in
+            Relative units - will be relative to another property eg em (relative to parent, % - relative to parent element,
+            rem - relative to root(html) element)
+        -->
+
+        <!--Font properties
+        font-family, font-weight, font-style, font-variant, font-stretch, font-size, line-height
+        @font-face - to load custom fonts on webpage
+        @font-face {
+            font-family: name;
+            src: url("url");
+        }
+        -->
+        <p id="font">Testing the different font properties</p>
+
+        <!--Text properties
+            text-shadow: 10px 6px 2px 
+            - first value is horizontal offset (positive value creates shadow to right, -ve to the left)
+            -second valueis vertical offset (positive value creates shadow to bottom, -ve to the top)
+            - third value is blur distance, defines percentage of blur, takes positive value. if negative value is given no shadow appears
+            multiple text shadows can be given by giving a , 
+
+            Glow effect - by giving 0 value to first and second and high value to blur
+        -->
+        <p id="textprops">Testing the different text properties</p>
+        <p class="glow">Example for glow</p>
+    </body>
+</html>

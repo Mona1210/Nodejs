@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="transformations.css">
+    </head>
+    <body>
+        <!--CSS supports below transformations
+        1. Translate - translate(x,y) moves an element right to x, y value to down. Element can be moved in only one direction
+        at once.
+        2. Scale - scale(x,y) scales the element by width (x) and height(y). If one vaue given - takes it for both, -ve value inverts the image
+        3. Rotate - rotate(angle) rotates the element. if +ve rotates in clockwise, -ve in anticlockwise
+        4. Skew - skew(x,y) to turn an element to any angle x from x axis and y from y axis. If y is not given then taken as 0
+        To skew along single axis use skewX() and skewY()
+        -->
+        <img src="images/google.jpg" alt="google">
+        <img id="translate" src="images/google.jpg" alt="google">
+        <img id="scale" src="images/google.jpg" alt="google"><br/><br/>
+        <p id="rotate">This si example for rotate</p>
+        <p id="skewnormal">This si example for skew</p>
+        <p id="skewxaxis">This si example for skew on x axis</p>
+
+        <!--Transitions - Used to show gradual changes in interval of time
+            transition-property - eg height color etc; can accept list of properties at once
+            transition-duration - duration in sec/msec. mandatory else no transition effect happens
+            transition-timing-function - controls pace and speed of transition 
+            ease - slow in start &end, fast in middle; linear - same speed throughout; ease-in - slow at start;
+            ease-out - slow at end; ease-in-out - slow at start and end and linear in between; steps - allows specificying
+            intervals for timing function
+            steps(int, start/end) - int is no of intervals, always positive; if start transition happens at start of each step
+            if end at end of each step
+            step-start = steps(1, start); step-end = steps(1, end)
+            transition-delay - specifies delay before start of transition
+
+            transition: width 2s linear 4s;
+            width - trannsition-property
+            2s - transition-duration
+            linear - transition-timingfunction
+            4s - transition-delay
+        -->
+        <img id="transition" src="images/google.jpg" alt="google"><br/><br/>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { AuthorsService } from './authors.service';
+import { TimerComponent } from './timer/timer.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    TimerComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [AuthorsService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

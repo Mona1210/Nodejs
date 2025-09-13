@@ -1,0 +1,10 @@
+.btnDefault {
+    background-color:rgb(119, 113, 113);
+    cursor: grabbing;
+}
+
+.btnLiked {
+    background-color: deeppink;
+    cursor: grabbing;
+}
+

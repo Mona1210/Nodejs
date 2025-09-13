@@ -1,0 +1,19 @@
+{
+"Flight" : [
+{"flightId": "IND-101","AircraftName":"Delta Airlines", "Fare":600, "availableSeats":3, "status":"Running"},
+{"flightId": "IND-102","AircraftName":"Jet Blue", "Fare":700, "availableSeats":20, "status":"Cancelled"},
+{"flightId": "IND-103","AircraftName":"United Airlines", "Fare":745, "availableSeats":11, "status":"Cancelled"},
+{"flightId": "IND-104","AircraftName":"Virgin Airlines", "Fare":840, "availableSeats":7, "status":"Running"},
+{"flightId": "IND-105","AircraftName":"Allegiant Air", "Fare":580, "availableSeats":15, "status":"Cancelled"},
+{"flightId": "IND-106","AircraftName":"Hawaian Airlines", "Fare":800, "availableSeats":21, "status":"Running"}
+]
+}
+
+{
+"FlightBooking":[
+{"bookingId":2001, "passengerName":"Markel", "noOfTickets":10, "totalAmount":6000, "flightId":"IND-101"},
+{"bookingId":2002, "passengerName":"Louis", "noOfTickets":16, "totalAmount":7000, "flightId":"IND-104"},
+{"bookingId":2003, "passengerName":"Rita", "noOfTickets":3, "totalAmount":2320, "flightId":"IND-105"},
+{"bookingId":2004, "passengerName":"Lizzy", "noOfTickets":5, "totalAmount":3000, "flightId":"IND-104"},
+{"bookingId":2005, "passengerName":"Gordo", "noOfTickets":20, "totalAmount":8800, "flightId":"IND-106"}
+]}

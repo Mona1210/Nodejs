@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card-header">
+                <h2 class="text-center">Reactive- Registration Form</h2>
+            </div>
+            <div class="card-body">
+                <form [formGroup] ="registerForm" (ngSubmit)="registerUser()">
+                    <div class="form-group">
+                        <label for="userName">User Name</label>
+                        <input id="userName" type="text" class="form-control" formControlName="userName">
+                        <div class="text-danger"  *ngIf="registerForm.controls.userName.invalid && registerForm.controls.userName.dirty">
+                            <span *ngIf="registerForm.controls.userName.errors?.required">
+                                Field Required
+                            </span>
+                            <span *ngIf="registerForm.controls.userName.errors?.pattern">
+                                Name can have only alphabets
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" class="form-control" formControName="password">
+                        <div class="text-danger" *ngIf="registerForm.controls.password.invalid && registerForm.controls.password.dirty">
+                            <span *ngIf="registerForm.controls.password.errors?.required">
+                                Field is required
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <input id="dateOfBirth" type="date" class="form-control" formControlName="dateOfBirth">
+                        <div class="text-danger" *ngIf="registerForm.controls.dateOfBirth.invalid && registerForm.controls.dateOfBirth.dirty">
+                            <span *ngIf="registerForm.controls.dateOfBirth.errors?.required">
+                                Field is required
+                            </span>
+                            <span *ngIf="registerForm.controls.dateOfBirth.errors?.birthDayError">
+                                {{registerForm.controls.dateOfBirth.errors?.birthDayError.message}}
+                            </span>
+                        </div>
+                    </div>
+                    <span *ngIf="isRegistered">{{registerForm.value.dateOfBirth}}</span>
+                    <button type="submit" class="btn btn-outline-success">
+                        Register
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

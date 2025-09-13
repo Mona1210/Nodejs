@@ -1,0 +1,19 @@
+.zippy {
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+
+.zippy-heading {
+    font-weight: bold;
+    padding-left: 20px;
+    cursor:pointer;
+}
+
+.zippy-body {
+    padding-left: 20px;
+    font-size: medium;
+}
+
+.zippy-open {
+    background-color: rgb(245, 235, 235);
+}

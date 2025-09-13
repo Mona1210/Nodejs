@@ -1,0 +1,47 @@
+{
+  "priority": [
+    "All",
+    "1",
+    "2",
+    "3"
+  ],
+  "category": [
+    "All",
+    "UI",
+    "Functional",
+    "ChangeRequest"
+  ],
+  "users": [
+    {
+      "username": "developer",
+      "password": "dev123"
+    },
+    {
+      "username": "tester",
+      "password": "test123"
+    }
+  ],
+  "defects": [
+    {
+      "category": "UI",
+      "desc": "Submit button coming to extreme left",
+      "priority": "2",
+      "status": "open",
+      "change": "Close Defect"
+    },
+    {
+      "category": "Functional",
+      "desc": "After submitting the form a confirmation popup must appear",
+      "priority": "1",
+      "status": "open",
+      "change": "Close Defect"
+    },
+    {
+      "category": "Change Request",
+      "desc": "Add remove user functionality",
+      "priority": "2",
+      "status": "closed",
+      "change": "No action pending"
+    }
+  ]
+}

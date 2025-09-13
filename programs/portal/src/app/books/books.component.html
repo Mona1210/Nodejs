@@ -1,0 +1,43 @@
+<div>
+    <input type="button" value="Refresh" (click)="refresh()"><br>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Book Name</th>
+                <th>Book Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of bookList">
+                <td>{{book.id}}</td>
+                <td>{{book.name}}</td>
+                <td><input type="button" value="Details" (click)="getDetails(book.id)"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="!hideform">
+    <h4>You can add or delete a book of your choice!</h4><br>
+    <form #bookForm="ngForm" (ngSubmit)="modifyBook(bookForm.value)">
+        <div class="form-group">
+            <label for="id">Enter Book ID</label>
+            <input type="number" class="form-control" [(ngModel)]="id" name="id" #ids="ngModel" required>
+            <div class="alert alert-danger" *ngIf="ids.invalid && ids.touched">
+                <span *ngIf="ids.errors?.required">Book Id is required</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">Enter Book Name</label>
+            <input type="text" class="form-control" [(ngModel)]="name" name="name" #names="ngModel" required>
+            <div class="alert alert-danger" *ngIf="names.invalid && names.touched">
+                <span *ngIf="names.errors?.required">Book Id is required</span>
+            </div>
+        </div> <br>
+            <input type="radio" name="book" [(ngModel)] = "add" value="add">Add
+            <input type="radio" name="book" [(ngModel)] = "delete" value="delete">Delete
+            <br>
+        <button class="btn btn-default" type="submit">Modify</button>
+    </form>
+</div>
+    <div class="alert alert-danger" *ngIf="errMessage">{{errMessage}}</div>
+</div>

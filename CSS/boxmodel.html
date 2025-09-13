@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="boxmodel.css">
+    </head>
+    <body>
+        <!-- Box model
+        includes padding, margin, border properties for each html element
+        padding - top right bottom left
+        if 1 value is specified - applied to all
+        if 2 values specified - 1st value for top and bottom, 2nd for left and right
+        if 3 values - 1st is top , 2nd is left and right, 3rd is bottom
+
+        Same rules applicable for margin.
+
+        when we set height and width its of the content and not for entire html element
+        total element width = width + padding-left + padding-right + border-left + border-right
+        total height = height + padding-top + padding-bottom + border-top + border-bottom
+
+        display - can have inline (HTML element rendered inline, cannot apply height and width props)
+        block (rendered as block elelmnet in next line)
+        inline-block (will behave like inline but we can apply height and width)
+
+        box-shadow: 5px 10px 6px 2px - 
+        5 is horiz offset (+ve value creates shadow to right, -ve value to left), 
+        10 - vertical offset (+ve creates shadow at bottom, -ve at top), 
+        if any of above properties is not mentioned, shadow wont be applied
+        6- blur distance (optional, only positive), 
+        2 - spread distance (optional, +ve value expands shadow in all direction, -ve contracts shadow)
+
+        border-image : used to specify an image as border
+            border-source - path of image
+            border-image-slice - values to slice teh image. values from 1 to 4 (top, right, bottom, left)
+            border-width - width of border
+            border-outset - amount by which border image area extends beyind border-box
+            border-repeat - whether edges of image should be stretched, repeated, rounded, scaled
+        border-image can be applied only with border property and not without it
+        -->
+        <div>
+            <p>This is the content in box</p>
+        </div>
+    </body>
+</html>

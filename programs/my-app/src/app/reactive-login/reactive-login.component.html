@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 offset-md-4">
+            <div class="card-header">
+                Reactive login Form
+            </div>
+            <div class="card-body">
+                <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+                    <div class="form-group">
+                        <label for="username">Enter Username</label>
+                        <input type="text" class="form-control" name="userName" [(ngModel)]="user"
+                            formControlName="uname">
+                            <div class="alert alert-danger" *ngIf="loginForm.controls.uname.errors && 
+                                loginForm.controls.uname.invalid && loginForm.controls.uname.touched">
+                                <span *ngIf="loginForm.controls.uname.errors?.required">Username is mandatory</span>
+                                <span *ngIf="loginForm.controls.uname.errors?.pattern">Username pattern is invalid</span>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Enter Password</label>
+                        <input type="password" class="form-control" name="password" [(ngModel)]="passwd"
+                            formControlName="pwd">
+                            <div class="alert alert-danger"  *ngIf="loginForm.controls.pwd.errors && 
+                                loginForm.controls.pwd.invalid && loginForm.controls.pwd.touched">
+                                <span *ngIf="loginForm.controls.pwd.errors?.required">Password is mandatory</span>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfBirth">Enter Date of Birth</label>
+                        <input type="date" class="form-control" name="dateOfBirth" [(ngModel)]="birthDate"
+                            formControlName="dob">
+                            <div class="alert alert-danger"  *ngIf="loginForm.controls.dob.errors && 
+                                loginForm.controls.dob.invalid && loginForm.controls.dob.touched">
+                                <span *ngIf="loginForm.controls.dob.errors?.required">Date of Birth is mandatory</span>
+                                <span *ngIf="loginForm.controls.dob.errors?.dobinvalid">{{loginForm.controls.dob.errors.dobinvalid.message}}</span>
+                            </div>
+                    </div>
+                    <div>{{birthDate | date:'full'}}</div>
+                    <div class="alert alert-danger" *ngIf="credsInvalid">
+                        Invalid Credentials! Please try again.
+                    </div>
+                   <br>
+                   <span *ngIf="!credsInvalid">{{loginForm.value.dob | days}}</span>
+                   <button type="submit" class="btn btn-default" [disabled]="loginForm.errors || 
+                        loginForm.invalid || loginForm.untouched">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

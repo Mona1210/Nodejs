@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title>
+    </head>
+    <body>
+        <form>
+            <h4>Registration</h4>
+            <!--Attributes used with input elements
+            placeholder - specifies the value that comes in field by default
+            pattern - specifies the pattern; required - the value must be given else error is thrown
+            multiple - allows user to enter/upload muktiple files
+            formoverride - used to override the built in form attributes
+            - formaction, formmethod (default is get), formnovalidate - (to bypass validation while testing), formtarget-->
+            <label for="Username" style="color:red">Enter Username : </label>
+            <input type="text" id="Username" placeholder="Please enter username" pattern="[a-z]"/><br/><br/>
+            <label for="Password">Enter Password : </label>
+            <input type="password" id="Password" required autofocus/><br/><br/>
+            <label for="DOB">Enter Date of Birth : </label>
+            <input type="date" id="DOB"/><br/><br/>
+            Select a month <input type="month"/><br/><br/>
+            Select a week <input type="week"/><br/><br/>
+            Select a color <input type="color"/><br/><br/>
+            <label for="Contact">Enter Contact : </label>
+            <input type="number" id="Contact"/><br/><br/>
+            <!--autocomplete - allows browser to predict a value, default is on, 
+            autofocus - specifies that an element should get focussed on load of webpage-->
+            <label for="Email">Enter Email : </label>
+            <input type="email" id="Email"/><br/><br/>
+            
+            <h5>Select technologies needed - </h5>
+            <input type="checkbox" value="HTML" checked/>HTML
+            <input type="checkbox" value="CSS" />CSS
+            <input type="checkbox" value="JS" />JS
+
+            <h5>Select Training Mode - </h5>
+            <input type="radio" name="training" value="Online" checked/>Online
+            <input type="radio" name="training" value="Classroom"/>Classroom <br/><br/>
+
+            <input type="hidden" name="language" value="english"/>
+            <!-- select allows to select from the available options only, cannot type your ownn value
+            datalist - provides available options but user can enter input as well-->
+            Select country code - 
+            <select>
+                <option value="">Please choose country code</option>
+                <option value="+213">+213</option>
+                <option value="+971">+971</option>
+                <option value="+147">+147</option>
+                <option value="+65">+65</option>
+            </select><br/><br/>
+            Select Country - 
+            <input list="countries">
+            <datalist id="countries">
+                <option value="India">IN</option>
+                <option value="France"></option>
+                <option value="UAE"></option>
+            </datalist>
+            <label>Enter URL of certificate - </label>
+            <input type="url"/><br/>
+            Progress bar - <progress min="0" max="100" value="40">40 of 100</progress><br/>
+            Slider bar - <input type="range" min="0" max="100" value="20"/><br/>
+            <label>Add Comments</label> &nbsp;
+            <textarea rows="4" cols="10">Default text</textarea><br/><br/>
+            Upload details : <input type="file"> <br/>
+            <input type="button" value="Click to see trainings"/>&nbsp;&nbsp;
+            <input type="submit"/>&nbsp;
+            <input type="reset"/>
+        </form>
+    </body>
+</html>

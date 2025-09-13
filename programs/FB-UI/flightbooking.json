@@ -1,0 +1,39 @@
+{
+  "FlightBooking": [
+    {
+      "bookingId": 2001,
+      "passengerName": "Markel",
+      "noOfTickets": 10,
+      "totalAmount": 6000,
+      "flightId": "IND-101"
+    },
+    {
+      "bookingId": 2002,
+      "passengerName": "Louis",
+      "noOfTickets": 16,
+      "totalAmount": 7000,
+      "flightId": "IND-104"
+    },
+    {
+      "bookingId": 2003,
+      "passengerName": "Rita",
+      "noOfTickets": 3,
+      "totalAmount": 2320,
+      "flightId": "IND-105"
+    },
+    {
+      "bookingId": 2004,
+      "passengerName": "Lizzy",
+      "noOfTickets": 5,
+      "totalAmount": 3000,
+      "flightId": "IND-104"
+    },
+    {
+      "bookingId": 2005,
+      "passengerName": "Gordo",
+      "noOfTickets": 20,
+      "totalAmount": 8800,
+      "flightId": "IND-106"
+    }
+  ]
+}

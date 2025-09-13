@@ -1,0 +1,294 @@
+<h2>Hello World!</h2>
+<!--{{propertyname}} -> Interpolation--> 
+<!--Interpolation is used to display value of property
+from component class in template/view-->
+<p>The sum of 1 + 1 is {{1 + 1}}.</p>
+
+<button (click)="changeName()">Change</button>
+<h3>This app is {{title}}</h3>
+
+<label for="titleName">Enter the App name</label>
+<input type = "text" placeholder="Enter app name here" #appName>
+<!--#appName is template variable - Used to capture value of input field-->
+
+<button class="btn btn-primary" (click) = "changeAppName(appName.value)">Change App Name</button>
+<!--Event Binding-->
+<br><br>
+
+<!--Interpolation syntax - one way data binding fron ts to html-->
+<img src="{{imageUrl}}" alt="google" width="400px" height="400px">
+
+<!-- Property binding syntax - one way data binding from ts file to html-->
+<img [src]="imageUrl" alt="google" width="400px" height="400px">
+
+<!--Which one to use?
+For displaying values of components property -> Use interpolation
+For assigning value to a property of the tag in html file -> Use Property Binding-->
+
+<!--Interpolation examples-->
+{{'title'}}
+{{title}}
+{{'title'.toUpperCase()}}
+{{'Hello' + (66+6)}}
+{{'Hello' + 66+6}}
+<br><br>
+<select #selectnum (change)="onChangeNum(selectnum.value)">
+  <option value= '{{n}}' *ngFor="let n of numArr">{{n}}</option>
+</select>
+<br><br>
+<table border = "1">
+  <thead>
+    <tr>
+      <th [attr.colspan] = "noOfColumns">Head</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hello</td>
+      <td>World</td>
+    </tr>
+  </tbody>
+</table>
+
+<br><br>
+
+<!--Class Binding-->
+
+<button [class.myClass] = "applyClass">Login</button>
+<!--<button [class.btn btn-success] = "applyClass">Login</button>-->
+<button [class.btn] = "applyClass" [class.btn-success]="applyClass">Login</button>
+<!-- When applyClass is true ==> btn btn-success, when false ==> btn btn.primary-->
+<br> <br>
+<button [class] = "applyClass ? 'btn btn-success' : 'btn btn-primary'">Register</button>
+<button [class] = "!applyClass ? successClass : primaryClass">Register</button>
+<!--Check Style binding-->
+<!--Types of Data Binding
+1. One way data binding
+  - either from html to ts (Event Binding)
+  - Or from ts to html - interpolation
+    - Property Binding
+    - Attribute Binding
+    - Class Binding 
+    - Style Binding 
+  
+2. Two way binding
+  - to and fro between html and ts files
+
+ngModel ==> directive from angular which helps us to achieve two way binding
+==> FormsModule must be added into app.module.ts ==> imports array-->
+<br><br>
+<input type="text" [(ngModel)]="user">
+<!--Banana ina  box model-->
+{{user}}
+<br>
+<button (click)="setValue()">Set value</button>
+<br><br>
+
+<input type="text" [(ngModel)]="name">
+<!--Banana ina  box model-->
+{{name}}
+
+<br><br>
+
+<!--What is directive?
+Directive is a feature which helps us to handle teh view/sructure of DOM which gets rendered
+It also helps in modifying appearance/behavior of DOM elements
+
+1. Components - directives which have their own view
+2. Structurall - They change the view of comonents, no view of their own
+ex - ngIf, ngFor, ngSwitch
+
+3. Attribute directives - They change appearance or styling of existing tags in components
+ex - ngClass, ngStyle-->
+
+<!--Till the form gets submitted ==> Till we click login button-->
+<div *ngIf="!submitted">
+  <form>
+    <label>UserName</label>
+    <input type="text" name="username" #username><br /><br />
+    <label for="password">Password</label>
+    <input type="password" name="password" #password><br />
+  </form>
+  <button (click)="onSubmit(username.value, password.value)">Login</button>
+</div>
+
+<!--when form gets submitted display login page and hide above form-->
+<!--<div *ngIf="submitted">
+  <div *ngIf="isAuthenticated">
+    <h4>Welcome {{userName}}</h4>
+  </div>
+  <div *ngIf="!isAuthenticated">
+    <h4>Invalid Login! Try again</h4>
+  </div>
+  <button (click)="submitted=false">Back</button>
+</div>-->
+
+<!-- Use of ng-template -->
+
+<div *ngIf="submitted">
+  <div *ngIf="isAuthenticated; else invalidLogin">
+    <h4>Welcome {{userName}}</h4>
+  </div>
+  <ng-template>
+    <h4>Invalid Login! Try again later..</h4>
+  </ng-template>
+  <ng-template #invalidLogin>
+    <h4>Please try again later...</h4>
+  </ng-template>
+  <button (click)="submitted=false">Back</button>
+</div>
+<br><br>
+<!--ngFor example-->
+
+<ul>
+  <li>{{fruitsArray[0]}}</li>
+  <li>{{fruitsArray[1]}}</li>
+  <li>{{fruitsArray[2]}}</li>
+</ul>
+
+<ul>
+  <li *ngFor="let fruit of fruitsArray">{{fruit}}</li>
+</ul>
+<ul>
+  <li *ngFor="let fruit of fruitsArray; let i=index">{{i}}-{{fruit}}</li>
+</ul>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Employee ID</th>
+      <th>Employee Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employeeArray">
+      <td>{{emp.empId}}</td>
+      <td>{{emp.empName}}</td>
+    </tr>
+  </tbody>
+</table>
+<br><br>
+<button (click)="displayStatus = !displayStatus">
+  {{displayStatus?'Show Content' : 'Hide Content'}}
+</button>
+<h1 [hidden]="displayStatus">Hello World</h1>
+<h1 *ngIf="displayStatus">Hello World</h1>
+
+<h3> Custom Pipe Sort</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productsList | sort: sortOption">
+      <td>{{ product.productName }}</td>
+      <td>{{ product.price }}</td>
+    </tr>
+  </tbody>
+</table>
+<!-- Check out Style Binding, ngSwitch, ngClass, ngStyle-->
+
+<div *ngFor="let emp of employeeArray" [ngSwitch] = "emp.department">
+  <h3 *ngSwitchCase= "'ETA'" class="alert alert-success">{{emp.empId}} - {{emp.empName}}</h3>
+  <h3 *ngSwitchCase= "'FSADM'" class="alert alert-primary">{{emp.empId}} - {{emp.empName}}</h3>
+  <h3 *ngSwitchCase= "'BI'" class="alert alert-danger">{{emp.empId}} - {{emp.empName}}</h3>
+  <h3 *ngSwitchCase= "'DX'" class="alert alert-warning">{{emp.empId}} - {{emp.empName}}</h3>
+</div>
+<br><br>
+
+<h2 [ngStyle]="{ backgroundColor:backgroundColor, color:textColor}">Hello ngStyle World 1</h2>
+<h4 [ngStyle]="styleToApply">Hellooo ngStyle World 2</h4>
+<br><br>
+<!--Pipes are used for formatting or presentation of data to user on UI screen
+2 types - built in pipes and custom pipes
+Syntax ==> {{value | pipeName}}-->
+<!-- String based pipes-->
+{{title | uppercase}}
+{{title | lowercase}}
+{{title | titlecase}}
+
+<!--- number based pipes-->
+<h4>{{1000 | currency}}</h4>
+<h4>{{1000 | currency:'INR'}}</h4>
+<h4>{{1000 | currency:'INR':'code'}}</h4>
+<!--parameters A.B-C
+A ==> min no of digits before decimal point
+B ==> min no of digits after decimal point
+C ==> max no of digits after decimal point-->
+<h4>{{1000 | currency:'INR':'code':'1.3-4'}}</h4>
+<h4>{{1000 | currency:'INR':'code':'5.3-4'}}</h4>
+<h4>{{1000 | currency:'INR':'code':'.3-4'}}</h4>
+
+<br><br>
+<h2>{{1000 | number:'5.3-4'}}</h2>
+<h2>{{salary | currency}}</h2>
+<br><br>
+
+<!--date value pipes-->
+<h5>{{today}}</h5>
+<h5>{{today | date}}</h5>
+<h5>{{today | date : 'long'}}</h5>
+<h5>{{today | date : 'medium'}}</h5>
+<h5>{{today | date : 'short'}}</h5>
+
+<h5>{{today | date : 'longDate'}}</h5>
+<h5>{{today | date : 'mediumDate'}}</h5>
+<h5>{{today | date : 'shortDate'}}</h5>
+
+<h5>{{today | date : 'longTime'}}</h5>
+<h5>{{today | date : 'mediumTime'}}</h5>
+<h5>{{today | date : 'shortTime'}}</h5>
+
+<h5>{{today | date : 'mmss'}}</h5>
+<h5>{{today | date : 'yyyy'}}</h5>
+
+<!--slice-->
+<!--The lastOndex + 1 value should be given to get teh last value as well-->
+<h2>{{[1,2,3,4,5] | slice:2:5}}</h2>
+<h2>{{"John Doe" | slice:2:7}}</h2>
+<!--Object data ==> displayed on browser-->
+<h2>{{employeeObj |json}}</h2>
+<!--JSON.stringify(obj) is used-->
+
+<!--Custom pipes
+- These are user defined pipes that can be used similar to built in pipes
+- To create custome pipe ==> ng generate pipe <<pipename>>
+  Eg - ng generate pipe salutation ==> In short ng g  p salutation-->
+  <div *ngFor="let emp of employeeArray" [ngSwitch]="emp.department">
+    <h3 *ngSwitchCase= "'ETA'" class="alert alert-success">{{emp.empId}} - {{emp.empName | salutation:emp.gender:emp.age}}</h3>
+    <h3 *ngSwitchCase= "'FSADM'" class="alert alert-primary">{{emp.empId}} - {{emp.empName | salutation:emp.gender:emp.age}}</h3>
+    <h3 *ngSwitchCase= "'BI'" class="alert alert-danger">{{emp.empId}} - {{emp.empName | salutation}}</h3>
+    <h3 *ngSwitchCase= "'DX'" class="alert alert-warning">{{emp.empId}} - {{emp.empName | salutation:emp.gender}}</h3>
+  </div>
+
+  <br>
+  <!--Nesting of components-->
+  <app-login></app-login>
+  <br><br>
+  <app-parent2-child [employeeName] = "empName" [employeeId] = "empId" [employeeObject] = "empObj"></app-parent2-child>
+  <br><br>
+  <!--The data can be displayed directly as below or can be done using calling a function-->
+  <app-child2parent (customEvent)="myCarName = $event"></app-child2parent>
+ <!-- <app-child2parent (customEvent)="getCarData($event)"></app-child2parent>-->
+  <h2>Inside Parent component ==> {{myCarName}}</h2>
+
+  <br><br>
+  <h3>{{empName}}</h3>
+  <button (click)="showComponentStatus = !showComponentStatus">
+    {{!showComponentStatus?'Show Counter component:'Hide Counter component'}}
+  </button>
+  <button (click)= "empName = 'Jack'">Update Employee Name</button>
+  <app-lifecycle-hooks-ex *ngIf="showComponentStatus" [employeeName] = "empName"></app-lifecycle-hooks-ex>
+
+  <br><br><br>
+  <!--<app-template-forms></app-template-forms>-->
+  <br><br>
+  <!--<app-reactive-forms></app-reactive-forms>-->
+  <!--<app-course-form></app-course-form><br><br>-->
+  <!--<app-templatelogin></app-templatelogin>-->
+  <app-reactive-login></app-reactive-login>
+  <!--<router-outlet></router-outlet>-->
+  <!--<app-book></app-book>-->

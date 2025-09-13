@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Introduction</title>
+        <!--<meta> used to give description of web page which is displayed in search results
+            when your page is hit in browser -->
+        <meta name="description" content="This is a test webpage">
+        <meta charset="utf-8">
+        <meta http-equiv="default-style" content="/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=0.1"> <!--specifies zoom level of 10% for the page-->
+    </head>
+    <body>
+        <!--Sectioning Elements
+        <header> (to include web page logo, website settings) -> <nav> (to display navigation links, navigation content)
+        <main> (main content of webpage. Only one main is allowed) -> <section> - <article>
+        <footer>. -->
+        <header>
+            <nav><a href="login.html">Login |</a> <a href="register.html">Register |</a> <a href="track.html">Track Order</a></nav>
+            <h1>Welcome to Hussain's Shoping</h1>
+            <nav>Clothing | Media</nav>
+        </header>
+        <section>
+            Hussain's very own one stop solution
+            <article><h1>Clothing</h1></article>
+            <article><h1>Media</h1></article>
+        </section>
+        <footer>About Us | Privacy Policy | Contact Us</footer>
+        <!--p, h1-h6 are block elements - start in new line
+        span, img, a - inline elements-->
+        <p>Welcome to HTML!</p>
+        <span>This is span#1</span>
+        
+        <table border="2">
+            <caption>Mobile Inventories available</caption>
+            <tr>
+                <th rowspan="2">Product Name</th>
+                <th colspan="2">Product Details</th>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Asus Zenfone Mobile</td>
+                <td>11599</td>
+                <td>Cheap phone by Asus</td>
+            </tr>
+            <tr>
+                <td>Redmi</td>
+                <td>8599</td>
+                <td>Cheap phone by Redmi</td>
+            </tr>
+        </table>
+        <!-- Editing elements - used by reviewers
+        del - It defines deleted text by striking it
+        ins - It defines inserted text by underlining it-->
+
+        <!--Media elements
+        image - src, alt - alternate image/text if it fails; figure is used usually with illustration, diagram
+        audio - src, controls - loop, autoplay, preload, muted
+        video - src, controls - along with above, height, width, poster
+        source - This allows us to list multiple sources for audio/video in case one of them cant play
+        iframe - used to include docs, videos or other web content directly from external sources
+        sandbox attribute of iframe - to put restrictions on content in iframe for security
+        "" indicates that all the restrictions will be put-->
+        <figure>
+            <img src="summit.png" alt="No image available"/>
+            <figcaption>A beautiful view</figcaption>
+        </figure>
+        <audio src="audio.mp3" controls="controls">No audio supported</audio>
+        <audio>
+            <source src="audio.mp3" type="audio/mp3">
+            <source src="song.ogg" type="audio/ogg">
+        </audio>
+        <a href="forms.html" target="myFrame">Click here</a>
+        <iframe name="myFrame" width="300" height="300" sandbox=""></iframe>
+    </body>
+</html>

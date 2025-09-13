@@ -1,0 +1,48 @@
+.container {
+   /* min-height: 450px;*/
+    display:block;
+    padding:4px;
+    margin-top:20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.row {
+    display: block;
+}
+
+.textlink {
+    text-decoration: none;
+    color:rgb(24, 125, 233)
+}
+
+.filter {
+    max-width: 85%;
+}
+
+.dropdown .btn-secondary {
+    background-color: #fff;
+    color: black;
+}
+.dropdown .h6 {
+    padding-right:10px;
+}
+
+.table {
+    border:2px rgb(150, 142, 142);
+    max-width: 90%;
+}
+
+.table .tableHeading {
+    background-color: rgb(97, 157, 231);
+}
+.table .tableBg {
+    background-color: rgba(192, 226, 243, 0.929)
+}
+
+.center {
+    margin-left:auto;
+    margin-right: auto;
+}

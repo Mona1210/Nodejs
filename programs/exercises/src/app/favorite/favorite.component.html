@@ -1,0 +1,12 @@
+<p>favorite works!</p>
+<button class="btn" (click)="onClick()" 
+[class.btn-primary]="isPrimary"
+[class.btn-success]="!isPrimary">Button</button>
+
+<span
+    class="glyphicon"
+    [class.glyphicon-star]="isPrimary"
+    [class.glyphicon-star-empty]="!isPrimary"
+    (click)="onClick()">
+</span>
+

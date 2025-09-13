@@ -1,0 +1,10 @@
+div {
+    border:2px solid lightseagreen;
+    border-radius:50px 25px 25px 50px;
+    width:220px;
+    height:150px;
+    padding:0px 20px 20px 40px;
+    margin:50px;
+    display:block;
+    box-shadow: 5px 10px 6px 2px lightpink;
+}

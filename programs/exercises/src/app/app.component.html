@@ -1,0 +1,41 @@
+<h2>Routing Exercise</h2>
+<nav>
+        <a [routerLink] = '["/childparent"]' routerLinkActive="active">ChildtoParent</a>
+        <a [routerLink] = '["/first"]' routerLinkActive="active">First</a>
+        <a [routerLink] = '["/second"]' routerLinkActive="active">Second</a>
+</nav>
+<router-outlet></router-outlet>
+
+<h2>Favorite exercise</h2>
+<app-favorite></app-favorite>
+<app-titlecase></app-titlecase>
+<app-like [count] = "tweet.likesCount"
+        [isClicked] = "tweet.isLiked"></app-like>
+<app-zippy></app-zippy>
+<br><br>
+<h3>Select a course to view</h3>
+<select #selected (change)='name = selected.value'>
+        <option value='Angular'>Angular</option>
+        <option value='Java'>Java</option>
+        <option value='SpringMVC'>SpringMVC</option>
+        <option value='HTML'>HTML</option>
+        <option value='Dotnet'>Dotnet</option>
+</select> <br><br>
+
+<app-parent-child [cName]='name'></app-parent-child>
+<app-child-parent (customEvent) = 'displayMessage($event)'></app-child-parent>
+<h5 *ngIf = 'message'> {{message}}</h5>
+
+<h3> CSS Encapsulation</h3>
+<div class="cmp">
+        App Component
+        <app-first></app-first>
+        <app-second></app-second>
+</div>
+
+<b>Using Observables</b>
+<h5 style="margin-bottom: 0;"> VALUES: </h5>
+<div *ngFor="let value of myArray"> {{value}}</div>
+<h5 style="margin-bottom: 0;"> ERRORS: </h5>
+<h5 style="margin-bottom: 0;"> FINISHED: </h5>
+<button style="margin-top: 2rem;" (click)="fetchData()">Fetch Data</button>

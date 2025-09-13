@@ -1,0 +1,25 @@
+<h4>The list of Electronics are here!</h4>
+<br>
+<select #filter (change)="filterList(filter.value)">
+    <option value="none">None</option>
+    <option value="mobile">Mobile</option>
+    <option value="laptop">Laptop</option>
+</select>
+<br><br>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let e of mainList">
+                <td>{{e.id}}</td>
+                <td>{{e.name}}</td>
+                <td>{{e.type}}</td>
+            </tr>
+    </tbody>
+</table>
+<br>

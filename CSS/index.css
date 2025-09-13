@@ -1,0 +1,17 @@
+@import url('style.css');
+body { 
+    background-color: lightcyan;
+    border:2px solid;
+}
+a:hover {
+    background-color: black;
+    color:white;
+}
+
+a:visited{
+    color:purple;
+}
+
+input[type="text"]:enabled {
+    background-color: lightpink;
+}

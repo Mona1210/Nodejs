@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container {
+                background-color: bisque;
+                border: 2px solid black;
+            }
+            .container-fluid {
+                background-color: lightskyblue;
+                border: 2px solid black;
+            }
+
+            .main-layout{
+                display:grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                max-width:1000px;
+                margin:0 auto;
+                grid-gap:10px
+            }
+            .header{
+                text-align: center;
+                grid-column:1/5;/*span this column from 1st grid to 5th grid line (4 columns)*/
+            }
+            .ad1 {
+                grid-column:1/3;
+            }
+            .ad2 {
+                grid-column:2/5;
+            }
+        </style>
+        <link href="bootstrap.css" rel="stylesheet">
+    </head>
+    <body>
+    <!--Container classes
+        All content of a page is placed in container
+        2 types of container classes - 
+        .container - fixed width responsive container (for certain range of screens the container size will be fixed
+            ie the widths are defined in px for different media screens)
+        .container-fluid - full width responsive container(uses entire width of browser)
+    -->
+    <!--
+        Grid system
+        Each webpage can be divided into rows and columns. each row has 12 columns
+        viewportsize = 100% => width of each grid = 100/12 = 8.333%
+        To create row => .row
+        To create column =>.col-<sq>-<n> sq is size qualifier and n is number of grids
+        sq - lg (large devvices - screenwidth>=1200px); md(medium devices - screenwidth - 992 to 1200px)
+        sm(small devices 768-992); xs(extra small <768)
+        n - 0 to 12
+        .offset-<n> - to give space between 2 colums. Appears to left of column
+        .col-sq1-n and .col-sq2-m - to design pages for screens of multiple dimensions (eg displaying 2 images)
+    -->
+    <div class="container">
+        <div class="row">container row</div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">container fluid row</div>
+    </div>
+    <!-- Row without Container - the row content goes out of screen. Why? because of margin left and right have -15px which gets 
+    compensated by padding in container elements -->
+    <div class="row">row without container</div>
+    <div class="container-fluid">Div with .container-fluid columns
+        <div class="row">
+            <div class="col-md-3 offset-sm-1" style="background-color: lightyellow; border: 2px solid black;">
+                col1
+            </div>
+            <div class="col-md-3 offset-sm-1" style="background-color: lightpink; border: 2px solid black;">
+                col5
+            </div>
+            <div class="col-md-4 offset-md-1" style="background-color: lightgreen; border: 2px solid black;">
+                col2
+            </div>
+            <div class="col-md-1 offset-md-1" style="background-color: lightgray; border: 2px solid black;">
+                col4
+            </div>
+        </div>
+    </div>
+    <!-- Column without Row - Columns will start after padding of 15px-->
+    <div class="container-fluid">Columns without Row
+        <div class="col-md-1" style="background-color: lightyellow; border: 2px solid black;">
+            col1
+        </div>
+        <div class="col-md-5" style="background-color: lightpink; border: 2px solid black;">
+            col5
+        </div>
+        <div class="col-md-4" style="background-color: lightgray; border: 2px solid black;">
+            col4
+        </div>
+    </div>
+    <!--Grid system overflow - when count of columns >12 the last col moves to next row-->
+    <div class="container-fluid">Div with .container-fluid columns
+        <div class="row">
+            <div class="col-md-5" style="background-color: lightyellow; border: 2px solid black;">
+                col7
+            </div>
+            <div class="col-md-5" style="background-color: lightgreen; border: 2px solid black;">
+                col5
+            </div>
+            <div class="col-md-4" style="background-color: lightgray; border: 2px solid black;">
+                col4
+            </div>
+        </div>
+    </div>
+    <!-- eg of displaying 2 images 
+    desktop - appear one beside other; tablet - one below other on center of screen ;
+    mobile - one below the other occupying entire width of screen
+    if image width> allocated grid width - image will overflow to next row
+    -->
+    <div class="row">
+        <div class="col-md-4 offset-md-1 col-sm-5 offset-sm-3 col-xs-12 offset-xs-0">
+            <img src="images/googlenew.jpg">
+        </div>
+        <div class="col-md-4 offset-md-1 col-sm-5 offset-sm-3 col-xs-12 offset-xs-0">
+            <img src="images/googlenew.jpg" class="rounded">
+        </div>
+    </div>
+
+    <!--Typography
+    4 groups - text size (font type and size), text alignment, text emphasis (font weight, color), text transformation
+    display-x - display headings
+    text alignment - .text-center, .text-left, .text-right, .text-justify
+    text emphasis - .text-primary (blue), .text-success (green), .text-info(darker blue), .text-warning(dark yellow/brown)
+                    , .text-danger(red), .text-muted(grey)
+    text transform - .text-capitalize (first letter is made cap, rest are not tpuched), .text-uppercse, .text-lowercase
+    -->
+    <div class="container">
+        <h1 class="display-1">Display 1</h1>
+    </div>
+    <div class="container">
+        <h1 class="display-2">Display 2</h1>
+    </div>
+    <div class="container">
+        <h1 class="display-3">Display 3</h1>
+    </div>
+    <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+    <p class="text-center">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+    <p class="text-left">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+    <p class="text-right">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+    
+    <!-- Tables
+        .table class - provides horizontal dividers with small cell padding (8px)
+        .table-bordered - add it along with table class for borders around table
+        .table-sm - to make the table compact
+        .table-hover - enables hover state of table rows (row gets highlighted)
+        .table-striped - to give alternate colors to table rows
+        .table-responsive - to make table responsive, table should be put in div tag with this class
+        adds horizontal scroll bar for  screen width <767px only if entire content cannot be shown
+    -->
+
+    <!-- Images
+        .rounded - adds rounded corners to image
+        .rounded - circle - makes teh image circle
+        .img-thumbnail - gives appearance of thumbnail
+        .img-fluid - to fit images automatically to screen size (does using width=100%), height - auto
+    -->
+    <img src="images/googlenew.jpg" class="img-thumbnail">
+    <img src="images/googlenew.jpg" class="rounded-circle"><br>
+    <img src="images/googlenew.jpg" class="img-fluid">
+
+    <!-- Cards
+        Card - bordered box with some padding around content. It can have header, body, footer, title
+        background color can be added using classes like bg-primary, bg-success etc
+        images - can be added using .card-img-top, .card-img-bottom, .card-img-overlay to img tag
+        card deck - grid of cards of equal height and width (created horizontally)
+    -->
+    <div class="card">
+        <div class="card-header">
+            Header
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">
+                Card title
+            </h4>
+            <p>Contents of card</p>
+        </div>
+        <div class="card-footer">
+            Footer
+        </div>
+    </div>
+
+    <!-- jumbotron
+    Used to enclose content in big grey box. Calls out to extra attention to specific contents-->
+
+    <div class="jumbotron">
+        <h1>Jumbotron</h1>
+        <p>I am inside jumbotron</p>
+    </div>
+    <p>Text outside jumbotron</p>
+
+    <!-- UI Components
+    forms - use .form-control for form elements like input, textarea, select. they will be set to width of 100% of parent
+        element
+    Radio buttons - use .form-check to style radio buttons and checkboxes. By default .form-check creates vertically 
+        alligned radio buttons. .form-check-inline creates horizontal ones
+    Buttons - use btn class with <button> or <input type="button/submit/reset">. btn-primary, btn-success, btn-lg,
+        btn-sm etc
+        .btn-block - width of button = width of parent element
+        .btn-link - used to make button appear as a link
+    Badges - Indicators for numerical values, used to show how many items are there with a link/list
+    -->
+    <button type="button" class="btn btn-md">Medium</button>
+    <button type="button" class="btn btn-info">Gallery
+        <span class="badge">25</span>
+    </button>
+    <span class="badge">out</span>
+    <a href="#">Products
+        <span class="badge">1000</span>
+    </a>
+
+    <!-- Navigation Bar
+    navbar - to help users in accessing different webpages of website. created using <nav>
+        responsive navbar collapses on smaller screens and a button is displayed (navbar toggler button)
+        to achieve this bootstrap.js and jquery are also used with css
+    navbar-brand - use this with <a> to add brand to top left corner of navbar
+    navbar-toggle - use it with button to create collapsible navbar of=n small screens
+        data-target = "#nav-collapse" - points to div which has id="nav-collapse"
+        data-toggle = "collapse" - to switch between visual states by collapsing whenever user clicks on button etc
+    navbar-nav - align teh links to left by default and keep them in one line
+    .active/.disabled - adding it to <a> makes link appear pressed are unavialable
+    .collapse & .navbar-collapse  - to give appropriate styling when collapsed
+
+    .ml-auto - margin utility class that sets left-margin to auto and hence pushes elements to right
+    -->
+    <div class="collapse navbar-collapse" id="collapsiblenavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Forms
+    .form-group - every<label> and its corresponding form element must be wrapped in div with .form-group
+    .form-control - for form elements like input, textarea, select (except button). they will be set to width of 100% of parent
+        element
+    2 types of form layouts - vertical and inline
+    default layout is vertical layout. no seperate bootstrap class is needed for this. This is inbuilt in <form>
+    in bootstrap. Labels and form elements are left aligned and stacked one below the other
+    .form-inline - aligns the label and form elements one beside the other in single row. This layout can be applied
+        only to forms whose viewports are atleast 768px wide
+    -->
+    <form>
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control">
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="Yes" value="option1">
+            <label class="form-check-label"for="Yes">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="No" value="option2">
+            <label class="form-check-label for="No">No</label>
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <form class="form-inline">
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control">
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+            <label class="form-check-label" for="inlineCheckbox1">1</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">2</label>
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <!-- Layout Patterns
+     - the layout is same in all devices except smallest one in which a single column is displayed.
+            has only 1 breakpoint
+    Drop Column - columns are dropped as device size reduces, multiple breakpoints
+    Layout shifter - layout drastically changes from one device to another
+
+    Navigation patterns
+    Do nothing - display same nav to all, can be used when few links
+    Select - In smaller size all menu items are kept as drop down
+    Hamburger menu - The menu is replaced with hamburger icon. On click menu is displayed either as toggle sidebar or
+        on teh screen
+
+    Resizing images - for large screen a larger resolution is set, for small screen small resolution. This is done 
+        by source tag and srcset attribute. We should have images of different resolution for this
+    Art Direction - load different cropped versions of same image. usually teh background gets cropped in smaller res
+    -->
+    <source media="(max-width:480px)" srcset="images/googlenew.jpg">
+    <source media="(max-width:640px)" srcset="images/google.jpg">
+
+    <!-- Creating layouts
+    Can be done using below - 
+    Tables (HTML), Floats(CSS), Flex(CSS), Bootsrap(CSS framework), Foundation(CSS frameword), Grid(CSS)
+    Grid - intersection of invisible vertical and horizontal lines. Each line is called grid line. We can have equally 
+        spaced or unequally spaced column grids
+    CSS Grid - Allows craetion of rows and columns. We can also span rows and columns using grid numbers
+    display:grid - creates grid system. typically applied to container element
+    grid-column-template:1fr 1fr - this creates 2 columns which occupies 1 fraction of space each
+    grid-column 3/5 - span a column across grid lines. Span column from grid line 3 to 5
+    grid-row:3/5 - span a row from grid line 3 to grid line 5 
+    grid-gap:5px - gap between all rows and columns
+
+    rows are created automatically. eg if we have 4 columns and 5 elements, 5th element will come to next row
+    
+-->
+    <div class="main-layout">
+        <p class="header">This si header</p>
+        <p class="ad1">AD1</p>
+        <p class="ad2">AD2</p>
+        <p>Trying out Grid</p>
+        <p>Trying out Grid</p>
+        <p>Trying out Grid</p>
+        <p>Trying out Grid</p>
+        <p>Trying out Grid</p>
+    </div>
+
+    <!-- CSS Grid vs Bootstrap
+    - Only 12 columns in B, no restrictions in G
+    - html structure has to be modified in B, In G we can change layout without changing HTML
+    - In B if diff columns have different content they will be of diff heights in same row. In G all columns will 
+        be of same height
+    
+        CSS Grid vs Flex
+    - Flex is 1D (either row or column), CSS Grid is 2D
+    - Flex wrap enables element to spanacross multiple columns, in G eache lement occupies 1 column
+-->
+<p class="text-capitalize">We're stUdying</p>
+<input type="button" class="btn btn-primary" value="Submit"><span class="badge">20</span>
+<button class="btn btn-primary">Submit
+    <span class="badge">20</span>
+</button>
+<input type="button" class="btn btn-success">Submit<span class="badge">20</span>
+
+<div class="container-fluid">Columns without Row
+    <div class="col-md-4 offset-md-1" style="background-color: lightyellow; border: 2px solid black;">
+        para <br> para2 <br> para3 
+    </div>
+    <div class="col-md-5 offset-md-1" style="background-color: lightpink; border: 2px solid black;">
+        col5
+    </div>
+</div>
+</body>
+</html>

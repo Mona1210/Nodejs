@@ -1,0 +1,39 @@
+<div *ngIf="!isregistered" class="container-fluid">
+    <div class="col-md-8 offset-md-3">
+        <div class= "card-header">
+            Register here!
+        </div>
+        <div class="card-body">
+            <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+                <div class="form-group">
+                    <label for="Name">Enter your name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                    <div class="error" *ngIf="registerForm.controls.name.invalid && registerForm.controls.name.touched">
+                        <span *ngIf="registerForm.controls.name.errors?.required">Name is mandatory</span>
+                        <span *ngIf="registerForm.controls.name.errors?.nodigits">{{registerForm.controls.name.errors.nodigits.message}}</span>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="DateofBirth">Enter your DOB</label>
+                    <input type="date" class="form-control" formControlName="dob">
+                    <div class="error" *ngIf="registerForm.controls.dob.invalid && registerForm.controls.dob.touched">
+                        <span *ngIf="registerForm.controls.dob.errors?.required">DOB is mandatory</span>
+                        <span *ngIf="registerForm.controls.dob.errors?.agelimit">{{registerForm.controls.dob.errors.agelimit.message}}</span>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="SSN">Enter your SSN</label>
+                    <input type="number" class="form-control" formControlName="ssn">
+                    <div class="error" *ngIf="registerForm.controls.ssn.invalid && registerForm.controls.ssn.touched">
+                        <span *ngIf="registerForm.controls.ssn.errors?.required">SSN is mandatory</span>
+                        <span *ngIf="registerForm.controls.ssn.errors?.max">SSN cannot have more than 5 digits</span>
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-default" type="submit" [disabled]="registerForm.invalid || registerForm.untouched">Register</button>
+            </form>
+        </div>
+    </div>
+</div>

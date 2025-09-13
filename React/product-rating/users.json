@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "post": {
+        "name": "Krishna",
+        "designation": "SSE"
+      }
+    },
+    {
+      "id": 2,
+      "post": {
+        "name": "Lakshmi",
+        "designation": "Lead"
+      }
+    },
+    {
+      "id": 3,
+      "post": {
+        "name": "Khalid",
+        "designation": "TA"
+      }
+    }
+  ]
+}

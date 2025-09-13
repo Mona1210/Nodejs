@@ -1,0 +1,61 @@
+#parent {
+    background-color: lightsteelblue;
+    border:1px solid;
+    height: 200px;
+    width: 200px;
+}
+
+#child {
+    background-color: lightyellow;
+    border: 1px solid;
+    height: 200px;
+    width: 400px;
+    opacity:0.5;
+    margin-left:50px;
+    margin-top:50px;
+}
+
+#childbgcolor {
+    background-color: RGBA(128, 128, 128, 0.5);
+    border: 1px solid;
+    height: 200px;
+    width: 400px;
+    opacity:0.7;
+    margin-left:50px;
+    margin-top:50px;
+    color:maroon;
+}
+
+#childHSLA {
+    background-color: HSLA(128, 70%, 20%, 0.1);
+    border: 1px solid;
+    height: 200px;
+    width: 400px;
+    opacity:0.5;
+    margin-left:50px;
+    margin-top:50px;
+    color:black;
+}
+
+#font {
+    font-family :Verdana;
+    font-style:italic;
+    font-variant:small-caps;
+    font-size:large;
+    font-weight:bold;
+    line-height:10px;
+}
+
+#textprops {
+    text-align:right;
+    text-decoration: blue underline;
+    text-transform:capitalize;
+    letter-spacing:1px;
+    word-spacing:5px;
+    text-indent:90px right;
+    text-shadow: 10px 6px 2px black;
+}
+
+.glow {
+    text-shadow: 0px 0px 10px yellow;
+}

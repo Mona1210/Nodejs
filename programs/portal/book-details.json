@@ -1,0 +1,28 @@
+{
+    "BookDetails": [
+      {
+        "id": 1,
+        "desc": "HTML is Hyper text language"
+      },
+      {
+        "id": 2,
+        "desc": "Angular is based on modules and components."
+      },
+      {
+        "id": 3,
+        "desc": "Spring framework makes use of java"
+      },
+      {
+        "id": 4,
+        "desc": "JavaScript is a subset of typescript"
+      },
+      {
+        "id": 5,
+        "desc": "CSS is used for front end styling of web pages"
+      },
+      {
+        "id": 6,
+        "desc": "NodeJS is needed to use npm commands in angular"
+      }
+    ]
+  }

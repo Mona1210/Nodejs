@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript Intro</title>
+        <style>
+            .myclass {
+                color : red;
+                display : inline;
+            }
+            #divid {
+                color: blue;
+            }
+            
+        </style>
+        <script>
+            console.log("This is from html file");
+        </script>
+        <!--<script src="./index.js"></script>-->
+        <!--<script src="./demo.js"></script>-->
+        <script src="http://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+        <script src="./objects.js"></script>
+    </head>
+    <body>
+        JavaScript <br/>
+        <p id="divid">Paragraph with Id</p>
+        <p id="classid" class="myclass care">Paragraph with Class</p>
+
+        <script>
+            //console.log($('.myclass'));
+            //$('.myclass').hide();
+            $('.care').hide();
+            //$('#classid').hide();
+            document.getElementById('divid');
+            var x = document.getElementsByClassName("myclass");
+           // document.getElementById("divid").style.color = 'red';
+            console.log(x);
+            console.log(x.innerHTML);
+            function User(name, age) { 
+                this.name = name;
+                this.age = age;
+            }
+            var usernew = new User('Daniel', 45);
+            document.write(usernew);
+            document.write(usernew[name] + ' ' + usernew[age]);
+        </script>
+    </body>
+</html>

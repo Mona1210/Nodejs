@@ -1,0 +1,54 @@
+{
+    "Electronics": [
+      {
+        "id": 1,
+        "name": "Iphone X",
+        "type": "Mobile"
+      },
+      {
+        "id": 2,
+        "name": "Motorola",
+        "type": "Mobile"
+      },
+      {
+        "id": 3,
+        "name": "Lenovo Think",
+        "type": "Laptop"
+      },
+      {
+        "id": 4,
+        "name": "POCO",
+        "type": "Mobile"
+      },
+      {
+        "id": 5,
+        "name": "Samsung",
+        "type": "Mobile"
+      },
+      {
+        "id": 6,
+        "name": "Asus",
+        "type": "Laptop"
+      },
+      {
+        "id": 7,
+        "name": "Apple Macbook",
+        "type": "Laptop"
+      },
+      {
+        "id": 8,
+        "name": "Galaxy S",
+        "type": "Mobile"
+      },
+      {
+        "id": 9,
+        "name": "HP",
+        "type": "Laptop"
+      },
+      {
+        "id": 10,
+        "name": "Dell Experia",
+        "type": "Laptop"
+      }
+    ]
+  }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="advancedSelectors.css">
+        <style>
+            a[target] {
+                background-color: lightcoral;
+                text-decoration:none;
+            }
+
+            a[target=_blank] {
+                font-size:x-large;
+            }
+
+            section[class$="para"]::first-letter{
+                font-size: 200%;
+                color:purple;
+            }
+
+            section[class^="para"]::first-letter{
+                font-size: 200%;
+                color:lightseagreen;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <!--Advanced selectors
+            1. Attribute - style an elemnet based on attribute or value of attribute of element
+            2. Relational - used when style has to be applied to direct child and not other nested elements or
+            to sibling of an element
+        -->
+        <!--Relational selectors-->
+        <!--
+            body p style will eb applicable for all p in body
+            body>p style will be applied for direct child p in body
+            section+p style only for p immediately after section
+            section~p style for all the p after section
+            
+        -->
+        <p>This is p element child of body</p>
+        <section>
+            <p>This is grandchild of body and placed in section</p>
+        </section>
+        <p>This is p element, child of body, placed after section</p>
+        <p>This is the last p element in body</p>
+
+        <!--Attribute selectors-->
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#" target="_blank">Info</a></li>
+                <li><a href="#" target="_self">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section class="para_section">
+            <p>Class name starts with para</p>
+        </section>
+        <div class="para">
+            <p>This is within div of class para</p>
+        </div>
+        <section class="mid_para">
+            <h2>This is mid section fo the page</h2>
+        </section>
+        <section class="last_para_butone">
+            <h2>This is the penultimate section fo the page</h2>
+        </section>
+        <section class="last_para">
+            <h2>This is last section fo the page</h2>
+        </section>
+    </body>
+</html>
